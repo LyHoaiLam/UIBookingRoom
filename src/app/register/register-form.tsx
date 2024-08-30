@@ -66,7 +66,6 @@ function RegisterForm() {
 
     return (
         <>
-            <h1 className="text-4xl text-center mt-8">Đăng ký tài khoản</h1>
             <div className="flex justify-center">
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2 w-full max-w-[600px]">
