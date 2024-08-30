@@ -1,10 +1,9 @@
-import { Input } from "@/components/ui/input";
-
+import LoginForm from "@/app/login/login-form";
 
 function PageLogin() {
     return (
     <>
-        <Input />
+        <LoginForm />
     </>
 
     )
