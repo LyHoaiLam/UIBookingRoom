@@ -24,9 +24,9 @@ function Room({ room }: RoomProps) {
                     <p className='text-xl'>Loại phòng: <span className='my-2 bg-gradient-to-r from-red-600 via-yellow-500 to-indigo-400 inline-block text-transparent bg-clip-text'>{room.description}</span></p>
                     <p>Price: <span className='my-2 bg-gradient-to-r from-red-600 via-yellow-500 to-indigo-400 inline-block text-transparent bg-clip-text'>{room.price} VNĐ</span></p>
                     <Button className="bg-sky-600 mt-5 animate-bounce">
-                        <Link href="/booking">
-                            Đặt phòng
-                        </Link>
+                    <Link href={{ pathname: "/booking", query: { idRoom: room.id } }}>
+                        Đặt phòng
+                    </Link>
                     </Button>
                 </div>
             </div>

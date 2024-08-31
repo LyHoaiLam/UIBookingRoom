@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
 interface FormBookingProps {
-    idRoom: number | undefined; // Make idRoom optional
+    idRoom: number | undefined;
 }
 
 function FormBooking({ idRoom }: FormBookingProps) {
@@ -24,9 +24,13 @@ function FormBooking({ idRoom }: FormBookingProps) {
         }
 
         const now = new Date();
-        const formattedDate = now.toISOString().slice(0, 16);
-        setCheckInDate(formattedDate);
-        setCheckOutDate(formattedDate);
+        const formattedCheckInDate = now.toISOString().slice(0, 16);
+
+        const checkOut = new Date();
+        const formattedCheckOutDate = checkOut.toISOString().slice(0, 16);
+
+        setCheckInDate(formattedCheckInDate);
+        setCheckOutDate(formattedCheckOutDate);
     }, [idRoom]);
 
     async function handleSubmit(event: React.FormEvent) {
@@ -84,6 +88,12 @@ function FormBooking({ idRoom }: FormBookingProps) {
                     <label>Check-In Date</label>
                     <Input type="datetime-local" value={checkInDate} onChange={(e) => setCheckInDate(e.target.value)} required />
                 </div>
+
+                <div>
+                    <label>Check-Out Date</label>
+                    <Input type="datetime-local" value={checkOutDate} onChange={(e) => setCheckOutDate(e.target.value)} required />
+                </div>
+
                 <Button type="submit" className="bg-sky-600">
                     {loading ? 'Đang đặt phòng...' : 'Đặt phòng'}
                 </Button>

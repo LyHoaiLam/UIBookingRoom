@@ -4,21 +4,26 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import SearchBooking from "./HeaderSearch"; 
 
 function Header() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const router = useRouter();
 
     useEffect(() => {
-        // Check for token in localStorage and update state
         const token = localStorage.getItem("token");
         setIsLoggedIn(!!token);
-    }, []); // Run once on component mount
+    }, []);
 
     const handleLogout = () => {
         localStorage.removeItem("token");
         setIsLoggedIn(false);
-        router.push("/"); // Redirect to home page
+        router.push("/");
+    };
+
+    const handleSearch = (searchQuery: { location: string, date: string }) => {
+        console.log("Searching for:", searchQuery);
+
     };
 
     return (
@@ -28,7 +33,7 @@ function Header() {
                     <Link href="/">Home Page Booking</Link>
                 </div>
                 <div className="w-[50%]">
-                    <Input placeholder="Search Booking theo Ngày và Vị trí" />
+                    <SearchBooking onSearch={handleSearch} />
                 </div>
                 <div className="flex w-[30%] justify-end">
                     {isLoggedIn ? (
