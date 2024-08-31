@@ -13,7 +13,6 @@ interface RoomProps {
     };
 }
 
-
 function Room({ room }: RoomProps) {
     return (
         <div key={room.id} className="room-card bg-slate-300 mt-2 rounded-lg">
@@ -23,11 +22,11 @@ function Room({ room }: RoomProps) {
                     <h2 className='scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0 bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text'>{room.name}</h2>
                     <p className='text-xl'>Loại phòng: <span className='my-2 bg-gradient-to-r from-red-600 via-yellow-500 to-indigo-400 inline-block text-transparent bg-clip-text'>{room.description}</span></p>
                     <p>Price: <span className='my-2 bg-gradient-to-r from-red-600 via-yellow-500 to-indigo-400 inline-block text-transparent bg-clip-text'>{room.price} VNĐ</span></p>
-                    <Button className="bg-sky-600 mt-5 animate-bounce">
                     <Link href={{ pathname: "/booking", query: { idRoom: room.id } }}>
-                        Đặt phòng
+                        <Button className="bg-sky-600 mt-5 animate-bounce">
+                            Đặt phòng
+                        </Button>
                     </Link>
-                    </Button>
                 </div>
             </div>
         </div>
@@ -35,4 +34,3 @@ function Room({ room }: RoomProps) {
 }
 
 export default Room;
-

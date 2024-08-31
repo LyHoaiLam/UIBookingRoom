@@ -1,5 +1,5 @@
 'use client'
-import FormBooking from "@/app/booking/form-booking";
+import FormBooking from "./form-booking";
 import { useSearchParams } from 'next/navigation';
 
 function Booking() {
@@ -14,3 +14,4 @@ const idRoom = searchParams.get('idRoom');
 }
 
 export default Booking;
+
