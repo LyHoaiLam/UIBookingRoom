@@ -54,7 +54,7 @@ function FormBooking({ idRoom }: FormBookingProps) {
         };
 
         try {
-            const response = await fetch('http://localhost:5102/api/Booking', {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}Booking`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

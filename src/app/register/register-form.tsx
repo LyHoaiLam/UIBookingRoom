@@ -39,7 +39,7 @@ function RegisterForm() {
         console.log("Submitting form with values:", values)
 
         try {
-            const response = await fetch('http://localhost:5102/api/Account/register', {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}Account/register`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

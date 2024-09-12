@@ -21,7 +21,7 @@ function SearchBooking({ onSearch }: SearchBookingProps) {
         setError(null);
 
         try {
-            const response = await fetch(`http://localhost:5102/api/Room?Location=${encodeURIComponent(location)}`);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}Room?Location=${encodeURIComponent(location)}`);
             if (!response.ok) {
                 throw new Error('Failed to fetch data');
             }

@@ -21,7 +21,6 @@ const PopupSearch: React.FC<PopupSearchProps> = ({ isVisible, results, onClose }
         } else {
             document.removeEventListener('mousedown', handleClickOutside);
         }
-
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
@@ -31,14 +30,8 @@ const PopupSearch: React.FC<PopupSearchProps> = ({ isVisible, results, onClose }
 
     return (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-gray-800 bg-opacity-50">
-            <div 
-                ref={popupRef} 
-                className="bg-white p-4 shadow-lg rounded-lg w-3/4 max-w-4xl relative overflow-y-auto max-h-[80vh]"
-            >
-                <button 
-                    onClick={onClose} 
-                    className="absolute top-2 right-2 text-gray-600"
-                >
+            <div ref={popupRef} className="bg-white p-4 shadow-lg rounded-lg w-3/4 max-w-4xl relative overflow-y-auto max-h-[80vh]">
+                <button onClick={onClose} className="absolute top-2 right-2 text-gray-600">
                     &times;
                 </button>
                 <h2 className="text-xl font-semibold mb-4">Search Results</h2>
@@ -50,11 +43,7 @@ const PopupSearch: React.FC<PopupSearchProps> = ({ isVisible, results, onClose }
                                 <p>{result.location}</p>
                                 <p>{result.description}</p>
                                 <p>Price: {result.price}</p>
-                                <img 
-                                    src={result.imageUrl} 
-                                    alt={result.name} 
-                                    className="w-32 h-32 object-cover mt-2" 
-                                />
+                                <img src={result.imageUrl} alt={result.name} className="w-32 h-32 object-cover mt-2" />
                             </li>
                         ))}
                     </ul>

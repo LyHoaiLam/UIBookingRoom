@@ -23,12 +23,7 @@ function Booking({ booking, onDelete, canDelete }: BookingProps) {
             <p>Check-out Date: {booking.checkOutDate}</p>
             <p>Status: {booking.status}</p>
             {canDelete && (
-                <button
-                    className="bg-red-500 text-white p-2 rounded"
-                    onClick={() => onDelete(booking.id)}
-                >
-                    Delete
-                </button>
+                <button className="bg-red-500 text-white p-2 rounded" onClick={() => onDelete(booking.id)}>Delete</button>
             )}
         </div>
     );

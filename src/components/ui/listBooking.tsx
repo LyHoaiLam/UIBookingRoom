@@ -26,7 +26,7 @@ function ListBooking() {
 
         async function fetchBookings() {
             try {
-                const response = await fetch("http://localhost:5102/api/Booking");
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}Booking`);
                 if (!response.ok) {
                     throw new Error("Failed to fetch bookings");
                 }
@@ -49,7 +49,7 @@ function ListBooking() {
         }
 
         try {
-            const response = await fetch(`http://localhost:5102/api/Booking/${id}`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}Booking/${id}`, {
                 method: 'DELETE',
             });
 

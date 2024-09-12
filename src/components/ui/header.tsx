@@ -1,7 +1,6 @@
 'use client'
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import SearchBooking from "./HeaderSearch"; 
@@ -23,7 +22,6 @@ function Header() {
 
     const handleSearch = (searchQuery: { location: string, date: string }) => {
         console.log("Searching for:", searchQuery);
-
     };
 
     return (

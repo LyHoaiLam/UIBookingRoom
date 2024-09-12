@@ -6,12 +6,15 @@ function ListRoom() {
     const [rooms, setRooms] = useState<any[]>([]);
 
     useEffect(() => {
-        
-        fetch('http://localhost:5102/api/Room')
+//         fetch('http://localhost:5102/api/Room')
+        fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}Room`)
             .then(response => response.json())
             .then(data => setRooms(data))
             .catch(error => console.error('Error fetching rooms:', error));
     }, []);
+
+    console.log('Base URL:', process.env.NEXT_PUBLIC_API_ENDPOINT);
+
 
     return (
         <>
