@@ -8,6 +8,7 @@ const idRoom = searchParams.get('idRoom');
 
     return (
         <>
+            <h1 className="text-4xl text-center mt-8">Booking</h1>
             <FormBooking idRoom={idRoom ? parseInt(idRoom) : undefined} />
         </>
      );

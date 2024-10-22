@@ -22,13 +22,10 @@ function FormBooking({ idRoom }: FormBookingProps) {
         if (idRoom) {
             setRoomId(idRoom);
         }
-
         const now = new Date();
         const formattedCheckInDate = now.toISOString().slice(0, 16);
-
         const checkOut = new Date();
         const formattedCheckOutDate = checkOut.toISOString().slice(0, 16);
-
         setCheckInDate(formattedCheckInDate);
         setCheckOutDate(formattedCheckOutDate);
     }, [idRoom]);
@@ -95,7 +92,7 @@ function FormBooking({ idRoom }: FormBookingProps) {
                 </div>
 
                 <Button type="submit" className="bg-sky-600">
-                    {loading ? 'Đang đặt phòng...' : 'Đặt phòng'}
+                    {loading ? 'Đang đặt phòng...' : 'Booking'}
                 </Button>
             </form>
             {error && <p className="text-red-500">{error}</p>}

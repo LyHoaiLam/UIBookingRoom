@@ -47,7 +47,6 @@ function ListBooking() {
             alert("You must be logged in to delete a booking.");
             return;
         }
-
         try {
             const response = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}Booking/${id}`, {
                 method: 'DELETE',
@@ -56,7 +55,6 @@ function ListBooking() {
             if (!response.ok) {
                 throw new Error("Failed to delete booking");
             }
-
             setBookings((prevBookings) => prevBookings.filter(booking => booking.id !== id));
         } catch (error) {
             console.error("Error deleting booking:", error);

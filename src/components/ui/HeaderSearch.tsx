@@ -42,8 +42,8 @@ function SearchBooking({ onSearch }: SearchBookingProps) {
     };
 
     return (
-        <div>
-            <div className="flex space-x-4 mb-4">
+        <>
+            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                 <Input 
                     type="text" 
                     placeholder="Enter location" 
@@ -51,16 +51,18 @@ function SearchBooking({ onSearch }: SearchBookingProps) {
                     onChange={(e) => setLocation(e.target.value)} 
                     onKeyDown={handleKeyDown} 
                 />
-                <Input 
+                <Input
+                    className="hidden sm:inline"
                     type="date" 
                     placeholder="Enter date" 
                     value={date} 
                     onChange={(e) => setDate(e.target.value)} 
                     onKeyDown={handleKeyDown} 
                 />
-                <Button onClick={handleSearch} className="bg-blue-500">
+                <Button onClick={handleSearch} className="bg-blue-500 w-[80px] sm:w-auto">
                     Search
                 </Button>
+
             </div>
             {loading && <p>Loading...</p>}
             {error && <p className="text-red-500">{error}</p>}
@@ -69,7 +71,7 @@ function SearchBooking({ onSearch }: SearchBookingProps) {
                 results={results} 
                 onClose={() => setShowPopup(false)} 
             />
-        </div>
+        </>
     );
 }
 
