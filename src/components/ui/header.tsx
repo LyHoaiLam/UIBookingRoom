@@ -35,8 +35,8 @@ function Header() {
             <div className="flex items-center">
                 <div className="w-[20%] text-3xl cursor-pointer"> 
                     <Link href="/">
-                        <span className="sm:hidden">Home</span>
-                        <span className="hidden sm:inline">Home Page Booking</span>
+                        <span className="sm:hidden sm:inline scroll-m-20 font-semibold tracking-tight first:mt-0 bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">Home</span>
+                        <span className="hidden sm:inline scroll-m-20 font-semibold tracking-tight first:mt-0 bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">Home Page Booking</span>
                     </Link>
                 </div>
 

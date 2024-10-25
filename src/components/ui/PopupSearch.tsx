@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useRef, useEffect } from 'react';
 
 interface PopupSearchProps {
@@ -38,13 +39,23 @@ const PopupSearch: React.FC<PopupSearchProps> = ({ isVisible, results, onClose }
                 {results.length > 0 ? (
                     <ul>
                         {results.map(result => (
-                            <li key={result.id} className="border p-4 mb-4">
-                                <h3 className="text-lg font-semibold">{result.name}</h3>
-                                <p>{result.location}</p>
-                                <p>{result.description}</p>
-                                <p>Price: {result.price}</p>
-                                <img src={result.imageUrl} alt={result.name} className="w-32 h-32 object-cover mt-2" />
-                            </li>
+                            <div>
+
+                                <li key={result.id} className="border p-4 mb-4">
+                                    <h3 className="text-lg font-semibold">{result.name}</h3>
+                                    <p>{result.location}</p>
+                                    <p>{result.description}</p>
+                                    <p>Price: {result.price}</p>
+                                    <div className='flex'>
+                                        <img src={result.imageUrl} alt={result.name} className="w-32 h-32 object-cover mt-2" />
+                                        <Link href={{ pathname: "/booking", query: { idRoom: result.id } }}>
+                                            <button className='h-10 w-48 ml-4 self-end text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-center'>Booking now</button>
+
+                                        </Link>
+                                    </div>
+                                </li>
+    
+                            </div>
                         ))}
                     </ul>
                 ) : (

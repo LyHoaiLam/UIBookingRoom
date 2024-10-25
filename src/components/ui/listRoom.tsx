@@ -46,7 +46,7 @@ function ListRoom() {
 
     return (
         <>
-            <h1 className='text-3xl text-center'>Danh sách các phòng</h1>
+            <h1 className='text-3xl text-center'>List Of Rooms</h1>
             {/* Thêm lớp lg:grid-cols-2 để giảm xuống 2 phòng ở màn hình lớn */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
                 {rooms.map(room => (
